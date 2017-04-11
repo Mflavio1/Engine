@@ -2,6 +2,7 @@ package com.teclab.munoz.engine;
 
 import android.app.usage.UsageEvents;
 import android.graphics.Canvas;
+import android.graphics.Point;
 import android.provider.ContactsContract;
 import android.util.EventLog;
 import android.view.MotionEvent;
@@ -36,10 +37,25 @@ public class DisplayObject {
 
     int width;
 
+     public  Resources resources;
 
 
-public  void dispathEvent(Event a)
+public  void dispathEvent(Event a){}
 
+
+    public void primaryOperations(){}
+    public Point localToGlobal(Point p){
+        return p;
+    }
+    public Point globalToLocal(Point p){
+        return p;
+    }
+    //public void dispatchEvent(Event e){}
+    public void dispatchEvent(String type){}
+    public void touchDown(Point p,int index){}
+    public void touchMove(Point p,int index){}
+    public void touchUp(Point p,int index){}
+    public void dispose(){}
 
 
 
@@ -59,11 +75,7 @@ public  void dispathEvent(Event a)
 
 
 
-    public void update(){
+    public void update(){}
 
-    }
-
-    public void onTouchEvent(MotionEvent event) {
-
-    }
+    public void onTouchEvent(MotionEvent event) {}
 }

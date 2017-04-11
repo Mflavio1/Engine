@@ -1,7 +1,10 @@
 package com.teclab.munoz.engine;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.graphics.PointF;
 
 import java.util.HashMap;
 
@@ -10,8 +13,26 @@ import java.util.HashMap;
  */
 public class Resources {
 
-    private GameView view;
-    private HashMap<String,Bitmap> pool;
+
+    private HashMap texturepool;
+    public SoundManager sounds;
+    public Context mContext;
+    private  int fps;
+    public  Canvas canvas;
+    public PointF aspect;
+    private  String hashKey;
+
+    public Resources(Context _context){
+        fps = 32;
+        hashKey = "";
+        mContext = _context;
+        texturepool = new HashMap();
+        sounds = new SoundManager(_context);
+    }
+
+    public void loadTexture(String key, int resouce)
+        if(!texturepool.containsKey(key))
+
 
     public Resources(GameView view){
         this.view = view;

@@ -16,4 +16,13 @@ public class Event {
 
 
 
+
+    public  Event(String _type){ Type = _type; }
+
+    Event(String _type, Object _data){ Type = _type;  data = _data; }
+
+
+
+
+
 }
