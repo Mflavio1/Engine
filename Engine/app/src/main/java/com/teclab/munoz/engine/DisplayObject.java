@@ -31,13 +31,27 @@ public class DisplayObject {
     float scaleX;
     float scaleY;
 
-    Transformations transformation;
+    Transformation transformation;
 
     boolean visible;
 
     int width;
 
      public  Resources resources;
+
+
+    public DisplayObject(){
+        x=y=0;
+        scaleX = scaleY = 1.0f;
+        pivotX = pivotY =0;
+        opacity = 1.0f;
+        width = heigth=0;
+        visible = true;
+        parent = null;
+       // transformation  = new Transformation(this);
+    }
+
+
 
 
 public  void dispathEvent(Event a){}

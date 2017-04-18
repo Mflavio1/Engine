@@ -1,49 +1,49 @@
 package com.teclab.munoz.engine;
 
-/**
- * Created by Alumno on 04/04/2017.
- */
-
-import android.net.sip.SipAudioCall;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+/**
+ * Created by Heat on 04/04/2017.
+ */
 
 public class EventDispatcher {
 
-public  EventDispatcher(){
+    private List listeners;
 
-    listeners = new ArrayList();
-}
-    public  void  addEventListeners(String type){
+    public EventDispatcher(){
+        listeners = new ArrayList();
+    }
+    public void addEventListener(String type)
+    {
         listeners.add(type);
     }
-
-    public void dispatchEvent(Event e){
+    public void dispatchEvent(Event e)
+    {
         if(e.target == null)
             e.target = this;
-             for (int i=0; i < listeners.size(); i++)
-                 if(((String)listeners.get(i)).equals(e.Type))
-                     reciveEvent(e);
-    }
-
-
-    public void dispatchEvent(String Type){
-        Event e = new Event(Type);
-        if(e.target == null)
-            e.target = this;
-        for (int i=0; i < listeners.size(); i++)
-            if(((String)listeners.get(i)).equals(e.Type))
+        for (int i=0;i<listeners.size();i++)
+            if(((String)listeners.get(i)).equals(e.type))
                 reciveEvent(e);
     }
+    public void dispatchEvent(String type){
 
-    public void removeEventListener(String Type){listeners(String Type);}
-
-    public  void  removeEventListeners(){listeners.clear();}
-
-    public  void  reciveEvent(Event event){}
-
-    public  void  dipose(){listeners.clear();}
-
-    private  List listeners;
+        Event e=new Event(type);
+        if (e.target == null)
+            e.target = this;
+        for (int i=0;i<listeners.size();i++)
+            if(((String)listeners.get(i)).equals(e.type))
+                reciveEvent(e);
+    }
+    public void removeEventListener(String type){
+        listeners.remove(type);
+    }
+    public void removeEventListener(){
+        listeners.clear();
+    }
+    public void reciveEvent(Event event)
+    {}
+    public void dispose(){
+        listeners.clear();
+    }
 
 }
