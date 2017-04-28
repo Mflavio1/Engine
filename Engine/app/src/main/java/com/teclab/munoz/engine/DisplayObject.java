@@ -37,7 +37,7 @@ public class DisplayObject {
 
     int width;
 
-     public  Resources resources;
+
 
 
     public DisplayObject(){
@@ -71,13 +71,6 @@ public  void dispathEvent(Event a){}
     public void touchUp(Point p,int index){}
     public void dispose(){}
 
-
-
-
-
-    public DisplayObject(Resources resources){
-        this.resources = resources;
-    }
 
 
 
